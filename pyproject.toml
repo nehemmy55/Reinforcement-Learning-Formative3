@@ -1,0 +1,14 @@
+[project]
+name = "dqn-space-invaders"
+version = "0.1.0"
+description = "DQN from scratch on Atari Space Invaders"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ale-py>=0.12.1",
+    "gymnasium[atari]>=1.0",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.4",
+    "opencv-python>=5.0.0.93",
+    "torch>=2.15.0",
+]
