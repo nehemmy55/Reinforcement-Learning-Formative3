@@ -8,7 +8,7 @@ A Deep Q-Network (DQN) agent implemented from scratch with PyTorch and Gymnasium
 |---|---|
 |nehemie| |
 | tresor| |
-| sonia| |
+| sonia| Play.py |
 
 
 ## Selected Environment: Space Invaders
