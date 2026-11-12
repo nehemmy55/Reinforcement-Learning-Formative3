@@ -1,0 +1,12 @@
+[
+  {"exp": 1,  "lr": 0.0002,   "gamma": 0.99,  "batch_size": 32, "eps_start": 1.0, "eps_end": 0.03, "eps_decay": 75000},
+  {"exp": 2,  "lr": 0.00075,  "gamma": 0.99,  "batch_size": 32, "eps_start": 1.0, "eps_end": 0.03, "eps_decay": 75000},
+  {"exp": 3,  "lr": 0.000025, "gamma": 0.99,  "batch_size": 32, "eps_start": 1.0, "eps_end": 0.03, "eps_decay": 75000},
+  {"exp": 4,  "lr": 0.0002,   "gamma": 0.98,  "batch_size": 32, "eps_start": 1.0, "eps_end": 0.03, "eps_decay": 75000},
+  {"exp": 5,  "lr": 0.0002,   "gamma": 0.995, "batch_size": 32, "eps_start": 1.0, "eps_end": 0.03, "eps_decay": 75000},
+  {"exp": 6,  "lr": 0.0002,   "gamma": 0.99,  "batch_size": 96, "eps_start": 1.0, "eps_end": 0.03, "eps_decay": 75000},
+  {"exp": 7,  "lr": 0.0002,   "gamma": 0.99,  "batch_size": 24, "eps_start": 1.0, "eps_end": 0.03, "eps_decay": 75000},
+  {"exp": 8,  "lr": 0.0002,   "gamma": 0.99,  "batch_size": 32, "eps_start": 1.0, "eps_end": 0.15, "eps_decay": 75000},
+  {"exp": 9,  "lr": 0.0002,   "gamma": 0.99,  "batch_size": 32, "eps_start": 1.0, "eps_end": 0.03, "eps_decay": 40000},
+  {"exp": 10, "lr": 0.0002,   "gamma": 0.99,  "batch_size": 32, "eps_start": 0.8, "eps_end": 0.03, "eps_decay": 75000}
+]
