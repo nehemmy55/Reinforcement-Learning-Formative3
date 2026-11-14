@@ -262,45 +262,45 @@ def train(args):
             episode_reward, episode_length = 0.0, 0
     env.close()
 
-        # Very short runs may never complete AVERAGE_WINDOW episodes
+    # Very short runs may never complete AVERAGE_WINDOW episodes
     if best_avg_reward == -float("inf"):
-            torch.save(q_net.state_dict(), model_path)
-            best_avg_reward = float(np.mean(recent_rewards)) if recent_rewards else 0.0
+        torch.save(q_net.state_dict(), model_path)
+        best_avg_reward = float(np.mean(recent_rewards)) if recent_rewards else 0.0
 
     minutes = (time.time() - start_time) / 60
     if episodes:
-            save_episode_log(episodes, os.path.join(out_dir, f"exp{args.exp}_log.csv"))
-            save_training_plot(
-                episodes,
-                os.path.join(out_dir, f"exp{args.exp}_plot.png"),
-                title=f"{args.member} - experiment {args.exp}",
-            )
-            append_summary(args, episodes, best_avg_reward, minutes, os.path.join (out_dir, "summary.csv"))
+        save_episode_log(episodes, os.path.join(out_dir, f"exp{args.exp}_log.csv"))
+        save_training_plot(
+            episodes,
+            os.path.join(out_dir, f"exp{args.exp}_plot.png"),
+            title=f"{args.member} - experiment {args.exp}",
+        )
+        append_summary(args, episodes, best_avg_reward, minutes, os.path.join(out_dir, "summary.csv"))
 
     print(f"Done in {minutes:.1f} min. Best {AVERAGE_WINDOW}-episode average reward: {best_avg_reward:.1f}")
     print(f"Model saved to {model_path}")
 
 def parse_args(argv=None):
-        p = argparse.ArgumentParser(description="Train a DQN on Space Invaders")
-        p.add_argument("--member", required=True, help="your name; results go to models/<member>/")
-        p.add_argument("--exp", type=int, required=True, help="experiment number (1-10)")
+    p = argparse.ArgumentParser(description="Train a DQN on Space Invaders")
+    p.add_argument("--member", required=True, help="your name; results go to models/<member>/")
+    p.add_argument("--exp", type=int, required=True, help="experiment number (1-10)")
 
-        # Hyperparameters investigated in Task 3
-        p.add_argument("--lr", type=float, default=1e-4, help="learning rate")
-        p.add_argument("--gamma", type=float, default=0.99, help="discount factor")
-        p.add_argument("--batch-size", type=int, default=32)
-        p.add_argument("--eps-start", type=float, default=1.0)
-        p.add_argument("--eps-end", type=float, default=0.05)
-        p.add_argument("--eps-decay", type=int, default=100_000, help="steps to go from eps-start to eps-end")
+    # Hyperparameters investigated in Task 3
+    p.add_argument("--lr", type=float, default=1e-4, help="learning rate")
+    p.add_argument("--gamma", type=float, default=0.99, help="discount factor")
+    p.add_argument("--batch-size", type=int, default=32)
+    p.add_argument("--eps-start", type=float, default=1.0)
+    p.add_argument("--eps-end", type=float, default=0.05)
+    p.add_argument("--eps-decay", type=int, default=100_000, help="steps to go from eps-start to eps-end")
 
-        #Fixed settings (kept the same for every experiment).
-        p.add_argument("--total-steps", type=int, default=300_000)
-        p.add_argument("--buffer-size", type=int, default=50_000)
-        p.add_argument("--learning-starts", type=int, default=10_000, help="random steps before learning")
-        p.add_argument("--train-freq", type=int, default=4, help="learn every N environment steps")
-        p.add_argument("--target-update", type=int, default=1_000, help="copy weights every N steps")
-        p.add_argument("--seed", type=int, default=42)
-        return p.parse_args(argv)
+    # Fixed settings (kept the same for every experiment).
+    p.add_argument("--total-steps", type=int, default=300_000)
+    p.add_argument("--buffer-size", type=int, default=50_000)
+    p.add_argument("--learning-starts", type=int, default=10_000, help="random steps before learning")
+    p.add_argument("--train-freq", type=int, default=4, help="learn every N environment steps")
+    p.add_argument("--target-update", type=int, default=1_000, help="copy weights every N steps")
+    p.add_argument("--seed", type=int, default=42)
+    return p.parse_args(argv)
 
 
 if __name__ == "__main__":
