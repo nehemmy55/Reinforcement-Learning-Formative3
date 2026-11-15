@@ -193,7 +193,7 @@ Average reward rose in every quarter, and episodes got longer as the agent learn
 
 Best trained agent (Tresor, experiment 4, loaded from `dqn_model.pth`) playing Space Invaders with `play.py`. The agent picks the action with the highest Q-value at every step (no random actions).
 
-**Video:** [`media/gameplay_demo.mp4`](media/gameplay_demo.mp4) (click, then "View raw" to download and play it).
+**▶ [Watch the gameplay video on Google Drive](https://drive.google.com/file/d/1Kv_4gd8jRCAvzKiX4fniuROCEImLAi5I/view?usp=sharing)**
 
 To reproduce the demo:
 
