@@ -10,6 +10,8 @@ A Deep Q-Network (DQN) agent implemented from scratch with PyTorch and Gymnasium
 | Tresor | `train.py` and `run_experiments.py`, 10 hyperparameter experiments |
 | Sonia | `play.py`, 10 hyperparameter experiments |
 
+**Task allocation sheet:** [Team Task Sheet (Google Sheets)](https://docs.google.com/spreadsheets/d/1FQVPv2dZKu55dp4zg_DISt_vwBcHQVgmiybzSFGW8Ts/edit?usp=sharing): team roles, task tracker and meeting attendance log.
+
 
 ## Selected Environment: Space Invaders
 
@@ -189,12 +191,9 @@ Average reward rose in every quarter, and episodes got longer as the agent learn
 
 ## Gameplay Demonstration
 
-Best trained agent (Tresor, experiment 4, loaded from `dqn_model.pth`) playing Space Invaders with `play.py`:
+Best trained agent (Tresor, experiment 4, loaded from `dqn_model.pth`) playing Space Invaders with `play.py`. The agent picks the action with the highest Q-value at every step (no random actions).
 
-<!-- Replace the line below with the recording, e.g.
-     [![Gameplay video](models/tresor/exp4_plot.png)](https://youtu.be/YOUR_VIDEO_ID)
-     or, for a file in the repo: <video src="gameplay.mp4" controls width="480"></video> -->
-**Video:** _link to be added_
+**Video:** [`media/gameplay_demo.mp4`](media/gameplay_demo.mp4) (click, then "View raw" to download and play it).
 
 To reproduce the demo:
 
