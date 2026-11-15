@@ -46,4 +46,5 @@ My baseline (experiment 1) is close to the original DQN paper: lr 0.0001, gamma 
 - **Learning rate 0.0001, gamma 0.95, batch size 32, epsilon 1.0 to 0.05 over 100,000 steps** (experiment 4).
 - It had the highest best and final averages, and its curve was still going up at the end, so more training steps would likely help.
 - This model is copied to `dqn_model.pth` at the repo root and is the one `play.py` loads by default.
+- In `play.py` (greedy, no random actions) the model scored 310, 605 and 480 over 3 episodes (average 465), higher than its training average of 397.5.
 - Limitation: one run per configuration. Repeating experiment 4 with other seeds would confirm the result, especially because Nehemie's low-gamma run (0.9) did not show the same gain.
